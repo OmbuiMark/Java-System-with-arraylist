@@ -4,6 +4,12 @@
  */
 package Student;
 
+import java.awt.GridLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author HP
@@ -26,21 +32,130 @@ public class Graduation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        regnumber = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        btnGenerate = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Graduation");
+
+        jLabel2.setText("REG Number");
+
+        btnGenerate.setText("Generate");
+        btnGenerate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(regnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(btnGenerate, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(108, 108, 108))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(regnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(82, 82, 82)
+                .addComponent(btnGenerate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
+        // TODO add your handling code here:
+         // get the reg number from the text input
+    String regNumber = regnumber.getText();
+
+    // create a new JFrame Transcript with the reg number
+    JFrame transcript = new JFrame("Transcript for " + regNumber);
+
+    // create labels and text fields for each course grade
+    JLabel scienceLabel = new JLabel("Science Grade:");
+    JTextField scienceGrade = new JTextField("A");
+    scienceGrade.setEditable(false);
+    JLabel mathsLabel = new JLabel("Maths Grade:");
+    JTextField mathsGrade = new JTextField("B");
+    mathsGrade.setEditable(false);
+    JLabel computingLabel = new JLabel("Computing Grade:");
+    JTextField computingGrade = new JTextField("C");
+    computingGrade.setEditable(false);
+    JLabel historyLabel = new JLabel("History Grade:");
+    JTextField historyGrade = new JTextField("B");
+    historyGrade.setEditable(false);
+
+    // calculate the overall grade based on the average of the course grades
+    double average = (double) (scienceGrade.getText().charAt(0) +
+        mathsGrade.getText().charAt(0) + computingGrade.getText().charAt(0) +
+        historyGrade.getText().charAt(0)) / 4.0;
+    String overallGrade;
+    if (average >= 70) {
+        overallGrade = "Distinction";
+        // create a congratulatory message for Distinction
+        JOptionPane.showMessageDialog(transcript, "Congratulations! You have graduated with Distinction.");
+    } else if (average >= 60) {
+        overallGrade = "Merit";
+        // create a congratulatory message for Merit
+        JOptionPane.showMessageDialog(transcript, "Congratulations! You have graduated with Merit.");
+    } else if (average >= 50) {
+        overallGrade = "Pass";
+        // create a congratulatory message for Pass
+        JOptionPane.showMessageDialog(transcript, "Congratulations! You have graduated with Pass.");
+    } else {
+        overallGrade = "Fail";
+        // create a failure message
+        JOptionPane.showMessageDialog(transcript, "Sorry, you have failed.");
+    }
+
+    // create a label for the overall grade
+    JLabel overallLabel = new JLabel("Overall Grade:");
+    JLabel overallGradeLabel = new JLabel(overallGrade);
+
+    // add all the labels and text fields to the transcript frame
+    transcript.setLayout(new GridLayout(0, 2));
+    transcript.getContentPane().add(scienceLabel);
+    transcript.getContentPane().add(scienceGrade);
+    transcript.getContentPane().add(mathsLabel);
+    transcript.getContentPane().add(mathsGrade);
+    transcript.getContentPane().add(computingLabel);
+    transcript.getContentPane().add(computingGrade);
+    transcript.getContentPane().add(historyLabel);
+    transcript.getContentPane().add(historyGrade);
+    transcript.getContentPane().add(overallLabel);
+    transcript.getContentPane().add(overallGradeLabel);
+
+    // set the size and visibility of the transcript frame
+    transcript.setSize(400, 200);
+    transcript.setVisible(true);
+    dispose();
+
+    }//GEN-LAST:event_btnGenerateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +193,9 @@ public class Graduation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGenerate;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField regnumber;
     // End of variables declaration//GEN-END:variables
 }
