@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,14 +23,24 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane2" alignment="0" pref="647" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane2" pref="631" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="272" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
+              <Component id="jLabel1" min="-2" pref="38" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane2" pref="353" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" pref="372" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -47,13 +57,13 @@
         <Component class="javax.swing.JTable" name="jTable2">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="6" rowCount="6">
-                <Column editable="true" title="Professor" type="java.lang.Object">
-                  <Data value="Andrew"/>
-                  <Data value="Keanu"/>
-                  <Data value="Ann"/>
-                  <Data value="Schwabasky"/>
-                  <Data value="Argo"/>
+              <Table columnCount="5" rowCount="6">
+                <Column editable="true" title="Name" type="java.lang.Object">
+                  <Data value="Will Witon"/>
+                  <Data value="James Murphy"/>
+                  <Data value="Anna Hathway"/>
+                  <Data value="Roben Schwabasky"/>
+                  <Data value="James Albert"/>
                   <Data value="null"/>
                 </Column>
                 <Column editable="true" title="Course" type="java.lang.Object">
@@ -64,47 +74,34 @@
                   <Data value="Development"/>
                   <Data value="null"/>
                 </Column>
-                <Column editable="true" title="Description" type="java.lang.Object">
-                  <Data value="The art of communicating with people"/>
-                  <Data value="The future of the world in computing"/>
-                  <Data value="Lets all build from Engineering"/>
-                  <Data value="Development from software engineering"/>
-                  <Data value="The history of development of major cities"/>
+                <Column editable="true" title="Year" type="java.lang.Object">
+                  <Data value="4"/>
+                  <Data value="2"/>
+                  <Data value="3"/>
+                  <Data value="1"/>
+                  <Data value="2"/>
                   <Data value="null"/>
                 </Column>
                 <Column editable="true" title="Completion" type="java.lang.Object">
                   <Data value="completed"/>
                   <Data value="incomplete"/>
-                  <Data value="completed"/>
-                  <Data value="completed"/>
-                  <Data value="completed"/>
+                  <Data value="incomplete"/>
+                  <Data value="incomplete"/>
+                  <Data value="incomplete"/>
                   <Data value="null"/>
                 </Column>
-                <Column editable="true" title="Comment" type="java.lang.Object">
-                  <Data value="best"/>
-                  <Data value="ok"/>
-                  <Data value="Excelent"/>
-                  <Data value="Intresting"/>
-                  <Data value="Just Ok "/>
-                  <Data value="null"/>
-                </Column>
-                <Column editable="true" title="Ratings" type="java.lang.Object">
-                  <Data value="4"/>
-                  <Data value="3.5"/>
-                  <Data value="5.0"/>
-                  <Data value="4.9"/>
-                  <Data value="5.0"/>
+                <Column editable="true" title="Fee complete" type="java.lang.Object">
+                  <Data value="settled"/>
+                  <Data value="settled"/>
+                  <Data value="Not settled"/>
+                  <Data value="settled"/>
+                  <Data value="Not settled"/>
                   <Data value="null"/>
                 </Column>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
@@ -139,5 +136,11 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="STUDENT LIST"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

@@ -8,12 +8,12 @@ package Student;
  *
  * @author HP
  */
-public class PerformanceData extends javax.swing.JFrame {
+public class StudentList extends javax.swing.JFrame {
 
     /**
-     * Creates new form PerformanceData
+     * Creates new form StudentList
      */
-    public PerformanceData() {
+    public StudentList() {
         initComponents();
     }
 
@@ -28,35 +28,47 @@ public class PerformanceData extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Andrew", "Communictaion", "The art of communicating with people", "completed", "best", "4"},
-                {"Keanu", "Computing", "The future of the world in computing", "incomplete", "ok", "3.5"},
-                {"Ann", "Engineering", "Lets all build from Engineering", "completed", "Excelent", "5.0"},
-                {"Schwabasky", "Software", "Development from software engineering", "completed", "Intresting", "4.9"},
-                {"Argo", "Development", "The history of development of major cities", "completed", "Just Ok ", "5.0"},
-                {null, null, null, null, null, null}
+                {"Will Witon", "Communictaion", "4", "completed", "settled"},
+                {"James Murphy", "Computing", "2", "incomplete", "settled"},
+                {"Anna Hathway", "Engineering", "3", "incomplete", "Not settled"},
+                {"Roben Schwabasky", "Software", "1", "incomplete", "settled"},
+                {"James Albert", "Development", "2", "incomplete", "Not settled"},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Professor", "Course", "Description", "Completion", "Comment", "Ratings"
+                "Name", "Course", "Year", "Completion", "Fee complete"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
+
+        jLabel1.setText("STUDENT LIST");
+        jLabel1.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+                .addGap(14, 14, 14))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -80,25 +92,26 @@ public class PerformanceData extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PerformanceData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PerformanceData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PerformanceData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PerformanceData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PerformanceData().setVisible(true);
+                new StudentList().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
